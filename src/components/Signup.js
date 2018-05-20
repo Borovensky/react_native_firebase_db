@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, ActivityIndicator, KeyboardAvoidingView, Platform } from 'react-native';
 import { connect } from 'react-redux';
-import { Card, Input, Button, Spinner } from './common';
+import { Card, Input, Button, Spinner, ErrorMessage } from './common';
 import { signIn, checkAuth } from '../actions';
 
 class Signup extends Component {
@@ -12,33 +12,38 @@ class Signup extends Component {
 		this.state = {
 			email: '',
 			password: '',
+			error: '',
 			borderStyleEmail: '#999999',
 			borderStylePassword: '#999999'
 		};
 
 	};
 
-	componentWillMount() {
-		
+	componentWillMount() {	
 		this.props.checkAuth();
-
-	}
+	};
 
 	onEmailChange(text) {
 		this.setState({
-			email: text
+			email: text,
+			error: ''
 		});
 	};
 
 	onPasswordChange(text) {
 		this.setState({
-			password: text
+			password: text,
+			error: ''
 		});
 	};
 
 	onButtonPress() {
 
 		const { email, password } = this.state;
+
+		if(email == '') return this.setState({ error: 'email is required' });
+
+		if(password == '') return this.setState({ error: 'password is required' })
 
 		this.props.signIn({ email, password });
 		
@@ -98,6 +103,8 @@ class Signup extends Component {
 						onFocus={() => this.onFocusPassword()}
 					/>
 				</KeyboardAvoidingView>
+				
+				<ErrorMessage error={this.state.error} />
 
 				<Button 
 					style={{position: 'absolute', bottom: '10%'}}

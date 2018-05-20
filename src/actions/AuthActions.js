@@ -57,6 +57,6 @@ export const signOut = () => dispatch => {
     AsyncStorage.removeItem('user').then(() => {
         firebase.auth().signOut();
         Actions.auth();
-        dispatch({ type: DROP_STATE })
+        dispatch({ type: DROP_STATE });
     });
 }

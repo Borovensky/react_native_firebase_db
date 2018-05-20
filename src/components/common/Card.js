@@ -15,6 +15,6 @@ const styles = {
     cardContainer: {
         backgroundColor: '#fff',
     }
-}
+};
 
-export { Card }
+export { Card };

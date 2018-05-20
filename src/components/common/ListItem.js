@@ -9,8 +9,8 @@ class ListItem extends PureComponent {
         
         this.state = {
             checked: false
-        }
-    }
+        };
+    };
 
     render () {
         return (
@@ -22,9 +22,9 @@ class ListItem extends PureComponent {
                 />
             </TouchableOpacity>
         );
-    }
+    };
 
-}
+};
 
 const styles = {
     itemContainer: {
@@ -36,6 +36,6 @@ const styles = {
         justifyContent: 'space-between',
         paddingHorizontal: 10
     }
-}
+};
 
 export default ListItem;

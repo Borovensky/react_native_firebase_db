@@ -35,8 +35,8 @@ class RouterComponent extends Component {
             </Router>
     
         );
-    }
+    };
     
-}
+};
 
 export default connect(null, { signOut })(RouterComponent);

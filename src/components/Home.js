@@ -15,11 +15,11 @@ class Home extends Component {
 
     componentDidMount() {       
         this.props.getItems();
-    }
+    };
 
     selectItem(item) {
         Actions.news({item});
-    } 
+    };
 
     renderItem = ({item}) => (
         <ListItem
@@ -32,7 +32,7 @@ class Home extends Component {
         <View>
             <Text>No data</Text>
         </View>
-    )
+    );
 
 	render() {
 
@@ -56,6 +56,6 @@ class Home extends Component {
 const mapStateToProps = ({ home }) => {
     const { loading, data } = home;
     return { loading, data };
-}
+};
 
 export default connect(mapStateToProps, { signOut, getItems })(Home);

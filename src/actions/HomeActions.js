@@ -8,7 +8,7 @@ export const getItems = () => dispatch => {
     AsyncStorage.getItem('user').then((user) => {
         firebase.database().ref(`user/${ user }`)
             .on('value', snapshot => {          
-                dispatch({ type: GET_ITEMS_SUCCESS, data: snapshot.val() })
+                dispatch({ type: GET_ITEMS_SUCCESS, data: snapshot.val() });
             });
     });
     

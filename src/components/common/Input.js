@@ -45,10 +45,8 @@ const styles = {
         paddingBottom: 5,
         fontSize: 18,
         lineHeight: 23,
-        // borderColor: '#999999',
-        borderBottomWidth: 1,
-        
-    },
+        borderBottomWidth: 1,   
+    }
 };
 
 export { Input };

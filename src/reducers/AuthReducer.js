@@ -22,9 +22,8 @@ export default ( state = INITIAL_STATE, action ) => {
             return { ...state, loading: false};
         case CHECK_AUTH_FAIL:
             return { ...state, loading: false};
-        case DROP_STATE: {
+        case DROP_STATE: 
             return INITIAL_STATE;
-        }
         default: 
             return state;
     };

@@ -6,8 +6,6 @@ class NewsItem extends Component {
 
     render() {
 
-        console.log(this.props.item);
-
         const { title, description } = this.props.item;
 
         return(
@@ -34,7 +32,6 @@ const styles = {
         marginBottom: 15,
         fontSize: 16
     }
-
-} 
+};
 
 export default NewsItem;

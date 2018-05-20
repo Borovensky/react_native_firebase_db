@@ -14,7 +14,7 @@ class App extends Component {
 
 		// https://github.com/facebook/react-native/issues/18868#issuecomment-382671739
 		YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated'])
-	}
+	};
 
 	componentWillMount() {
 		var config = {
@@ -25,10 +25,8 @@ class App extends Component {
 			storageBucket: "",
 			messagingSenderId: "1061484014811"
 		};
-		
-		firebase.initializeApp(config);
-		  
-	}
+		firebase.initializeApp(config);	  
+	};
 
 	render() {
 
